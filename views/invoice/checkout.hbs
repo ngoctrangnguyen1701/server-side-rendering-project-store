@@ -1,0 +1,253 @@
+<h2 class="text-center mt-3">{{title}}</h2>
+
+<form name="formInput" id="formInput">
+    <div class="card mx-4 mt-4 p-4 border">
+        <div class="row align-items-center">
+            <div class="col-3">Full name</div>
+            <div class="col-9">
+                <input type="text" name="fullname" class="form-control">
+                <span class="error text-danger"></span>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Email</div>
+            <div class="col-9">
+                <input type="email" name="email" class="form-control">                
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Phone</div>
+            <div class="col-9">
+                <input type="number" name="phone" class="form-control">
+                <span class="error text-danger"></span>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Province</div>
+            <div class="col-9">
+                <select name="province" class="form-control">
+                    {{#each arrProvinces}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>                
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">District</div>
+            <div class="col-9">
+                <select name="district" class="form-control"></select>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Ward</div>
+            <div class="col-9">
+                <select name="ward" class="form-control"></select>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Address</div>
+            <div class="col-9">
+                <input type="text" name="address" class="form-control">
+                <span class="error text-danger"></span>
+            </div>
+        </div>
+        <div class="row align-items-center mt-3">
+            <div class="col-3">Note</div>
+            <div class="col-9">
+                <textarea name="note" rows="3" class="form-control"></textarea>                
+            </div>
+        </div>
+        <center>
+            <button class="btn btn-warning mt-3">Confirm checkout</button>
+        </center>
+    </div>
+</form>
+
+{{!-- Cart --}}
+<div class="your-cart">
+    <h2 class="mt-4 ms-4">Your cart</h2>
+    <div class="card mt-3 mx-4">
+        <div class="table-responsive mb-0">
+            <table class="table table-vcenter table-mobile-md card-table table-dark">
+                <thead style="background-color:antiquewhite">
+                    <tr>                    
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Amount</th>                    
+                    </tr> 
+                </thead>
+                <tbody>
+                    {{#each orderProduct}}
+                        <tr>
+                            <td>                            
+                                <div class="d-flex py-1 align-items-center">
+                                    <img src="/images/{{this.imgUrl}}" class="avatar me-2" >
+                                    <p class="mb-0 name" style="margin-left: 10px">{{this.product}}</p>
+                                    <input type="hidden" value="{{this._id}}" class="id">
+                                </div>                            
+                            </td>
+                            <td><input type="number" value="{{this.quantity}}" step="1" min="1" max="20" class="quantity" readonly></td>
+                            <td class="price">{{this.price}}</td>
+                            <td class="amount">{{multiply this.price this.quantity}}</td>                        
+                        </tr>
+                    {{/each}}   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="me-4">
+        <div class="card mt-3 col-4 ms-auto">
+            <div class="card-body">
+                <p>You will buy: <span id="buy-product" class="text-warning">{{buy}}</span> product</p>
+                <div class="border-top"></div>                  
+                <h3 class="mt-3 font-weight-bold text-success">TOTAL: <span id="total">{{pay}}</span></h3>                    
+            </div>
+        </div>
+    </div>
+    <center><a href="/cart" class="btn btn-warning mt-3">Edit my cart</a></center>
+</div>
+
+
+{{!-- Modal Confirm--}}
+<div class="modal modal-blur fade" id="modal-report" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">        
+        <div class="modal-content border-wide shadow-lg">
+            <form name="formConfirm"> 
+                <div class="modal-header">
+                    <h5 class="modal-title text-warning">Confirm checkout</h5>                
+                </div>
+                <div class="modal-body">                                    
+                    <div class="row align-items-center">
+                        <div class="col-3">Full name</div>
+                        <div class="col-9">
+                            <input type="text" name="fullname" class="form-control" readonly>                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Email</div>
+                        <div class="col-9">
+                            <input type="email" name="email" class="form-control" readonly>                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Phone</div>
+                        <div class="col-9">
+                            <input type="text" name="phone" class="form-control" readonly>                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Province</div>
+                        <div class="col-9">                          
+                            <select name="pid" class="form-control">
+                                {{#each arrProvinces}}
+                                    <option value="{{this._id}}">{{this.name}}</option>
+                                {{/each}}
+                            </select>           
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">District</div>
+                        <div class="col-9">                            
+                            <select name="did" class="form-control"></select>    
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Ward</div>
+                        <div class="col-9">                                                           
+                            <select name="wid" class="form-control"></select>      
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Address</div>
+                        <div class="col-9">
+                            <input type="text" name="address" class="form-control" readonly>                            
+                        </div>
+                    </div>
+                    <div class="row align-items-center mt-3">
+                        <div class="col-3">Note</div>
+                        <div class="col-9">
+                            <textarea name="note" rows="3" class="form-control" readonly></textarea>                
+                        </div>
+                    </div>                    
+                </div>
+
+                {{!-- Cart --}}
+                <h2 class="mt-4 ms-4">Your cart</h2>
+                
+                <div class="table-responsive mb-0">
+                    <table class="table table-vcenter table-mobile-md card-table table-dark">
+                        <thead style="background-color:antiquewhite">
+                            <tr>                    
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Amount</th>                    
+                            </tr> 
+                        </thead>
+                        <tbody>             
+                            {{#each orderProduct}}
+                                <tr>
+                                    <td>                            
+                                        <div class="d-flex py-1 align-items-center">
+                                            <img src="/images/{{this.imgUrl}}" class="avatar me-2" >
+                                            <p class="mb-0 name" style="margin-left: 10px">{{this.product}}</p>
+                                            <input type="hidden" value="{{this._id}}" class="id">
+                                        </div>                            
+                                    </td>
+                                    <td><input type="number" value="{{this.quantity}}" step="1" min="1" max="20" class="quantity" readonly></td>
+                                    <td class="price">{{this.price}}</td>
+                                    <td class="amount">{{multiply this.price this.quantity}}</td>                        
+                                </tr>
+                            {{/each}}                                           
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="border-top d-flex justify-content-end">
+                    <div class="mt-3 me-3">                        
+                        <p>You will buy: <span id="buy-product" class="text-warning">{{buy}}</span> product</p>                                             
+                        <h3 class="mt-3 font-weight-bold text-success">TOTAL: <span id="total">{{pay}}</span></h3>                    
+                    </div>  
+                </div> 
+
+                <div class="modal-footer border-top py-3">
+                    <button class="btn btn-link link-secondary btn-cancel" data-bs-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary ms-auto">ACCEPT</button>
+                </div>
+            </form>
+        </div>        
+    </div>
+</div>
+
+
+{{!-- Modal Success --}}
+<div class="modal modal-blur fade" id="modal-success" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content">            
+            <div class="modal-status bg-success"></div>
+            <div class="bg-white text-dark">
+                <div class="modal-body text-center py-4">
+                    <!-- Download SVG icon from http://tabler-icons.io/i/circle-check -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-green icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><circle cx="12" cy="12" r="9" /><path d="M9 12l2 2l4 -4" /></svg>                
+                    <h3>Order Success</h3>
+                    <div class="text-muted">Thank for your ordering!</div>
+                </div>
+                <div class="modal-footer">
+                    <div class="w-100">
+                        <div class="row">
+                            <div class="col">
+                                <a href="/" class="btn btn-white w-100">Return home</a>
+                            </div>
+                            <div class="col">
+                                <a href="" class="btn btn-success w-100" id="invoice-detail">View invoice details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/invoice/checkout.js"></script>

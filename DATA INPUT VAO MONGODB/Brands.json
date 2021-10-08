@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "60898a4a959d3d296cbf9d06"
+  },
+  "brand": "Asus"
+},{
+  "_id": {
+    "$oid": "60898a9d959d3d296cbf9d07"
+  },
+  "brand": "Dell"
+},{
+  "_id": {
+    "$oid": "60898ac0959d3d296cbf9d08"
+  },
+  "brand": "MSI"
+},{
+  "_id": {
+    "$oid": "60898b41959d3d296cbf9d09"
+  },
+  "brand": "HP"
+},{
+  "_id": {
+    "$oid": "60898f8258dc5603902a1157"
+  },
+  "brand": "LG"
+},{
+  "_id": {
+    "$oid": "60898f8258dc5603902a1158"
+  },
+  "brand": "Kingston"
+},{
+  "_id": {
+    "$oid": "60898f8258dc5603902a1159"
+  },
+  "brand": "Gigabyte"
+},{
+  "_id": {
+    "$oid": "609018fa3c90d9046cc531b4"
+  },
+  "brand": "DareU"
+},{
+  "_id": {
+    "$oid": "60aa75d895224e2a8864a067"
+  },
+  "brand": "No brand"
+},{
+  "_id": {
+    "$oid": "60aa75e695224e2a8864a068"
+  },
+  "brand": "Other brand"
+}]

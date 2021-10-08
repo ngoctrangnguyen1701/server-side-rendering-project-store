@@ -1,0 +1,41 @@
+[{
+  "_id": {
+    "$oid": "60841028125d7f32b43ae47c"
+  },
+  "category": "Laptop"
+},{
+  "_id": {
+    "$oid": "608440cecd33963078b3457b"
+  },
+  "category": "RAM"
+},{
+  "_id": {
+    "$oid": "608674b835d497341c097635"
+  },
+  "category": "PC"
+},{
+  "_id": {
+    "$oid": "6086750435d497341c09763a"
+  },
+  "category": "Case"
+},{
+  "_id": {
+    "$oid": "6086750435d497341c09763b"
+  },
+  "category": "Mainboard"
+},{
+  "_id": {
+    "$oid": "6086750435d497341c09763c"
+  },
+  "category": "VGA"
+},{
+  "_id": {
+    "$oid": "608a1c649108472db096e608"
+  },
+  "category": "Mouse"
+},{
+  "_id": {
+    "$oid": "60a0fa96f833801a84f933c5"
+  },
+  "category": "Headphone"
+}]

@@ -1,0 +1,432 @@
+[{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b81"
+  },
+  "bid": "60898a4a959d3d296cbf9d06",
+  "cid": "60841028125d7f32b43ae47c",
+  "description": "yes",
+  "imgUrl": "unnamed.webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "pin": "3 cell 42 Wh",
+  "price": 154,
+  "product": "Laptop ASUS Vivobook",
+  "quantity": "5",
+  "ram": "8G",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "1.8 kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b82"
+  },
+  "bid": "60898a4a959d3d296cbf9d06",
+  "cid": "60a0fa96f833801a84f933c5",
+  "description": "yes",
+  "imgUrl": "SP025AS_271909.jpg",
+  "isImg": "true",
+  "led": "yes",
+  "made": "China",
+  "price": 3,
+  "product": "Headphone Asus ROG",
+  "quantity": "2",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "2.1kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b83"
+  },
+  "bid": "60898b41959d3d296cbf9d09",
+  "cid": "60841028125d7f32b43ae47c",
+  "description": "null",
+  "imgUrl": "unnamed (1).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "pin": "3 cell 42 Wh",
+  "price": 50,
+  "product": "Laptop HP ProBook 440 G8",
+  "quantity": "5",
+  "ram": "8G",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "2kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b84"
+  },
+  "bid": "60898ac0959d3d296cbf9d08",
+  "cid": "60841028125d7f32b43ae47c",
+  "description": "null",
+  "imgUrl": "unnamed (2).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "pin": "3 cell 42 Wh",
+  "price": 5,
+  "product": "Laptop MSI Modern 14",
+  "quantity": "2",
+  "ram": "8G",
+  "size": "36 x 25 x 1.4 cm",
+  "weight": "1.8 kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b85"
+  },
+  "bid": "60898a9d959d3d296cbf9d07",
+  "cid": "60841028125d7f32b43ae47c",
+  "description": "9",
+  "imgUrl": "unnamed (3).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "America",
+  "pin": "3 cell 42 Wh",
+  "price": 9,
+  "product": "Laptop Dell Inspiron 15 3501",
+  "quantity": "3",
+  "ram": "16G",
+  "size": "37 x 20 x 2 cm",
+  "weight": "2.4kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b86"
+  },
+  "bid": "60898f8258dc5603902a1158",
+  "cid": "608440cecd33963078b3457b",
+  "description": "null",
+  "imgUrl": "unnamed (4).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "price": 6,
+  "product": "RAM desktop KINGSTON Fury Black (1 x 8GB) ",
+  "quantity": "6",
+  "ram": "8G",
+  "size": "38 x 22 x 2 cm",
+  "weight": "100g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b87"
+  },
+  "bid": "60898f8258dc5603902a1159",
+  "cid": "608440cecd33963078b3457b",
+  "description": "null",
+  "imgUrl": "unnamed (5).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "price": 2,
+  "product": "RAM desktop Apacer Panther Golden",
+  "quantity": "2",
+  "ram": "8G",
+  "size": "39 x 24 x 3 cm",
+  "weight": "150g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b88"
+  },
+  "bid": "609018fa3c90d9046cc531b4",
+  "cid": "60a0fa96f833801a84f933c5",
+  "description": "null",
+  "imgUrl": "unnamed (6).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "Korea",
+  "price": 2,
+  "product": "Headphone DareU EH722X ",
+  "quantity": "2",
+  "size": "40 x 20 x 2 cm",
+  "weight": "600g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b89"
+  },
+  "bid": "609018fa3c90d9046cc531b4",
+  "cid": "60a0fa96f833801a84f933c5",
+  "description": "null",
+  "imgUrl": "unnamed (7).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "Korea",
+  "price": 1,
+  "product": "Headphone Dareu MAGIC QUEEN",
+  "quantity": "3",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "700g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8a"
+  },
+  "bid": "60898f8258dc5603902a1157",
+  "cid": "60841028125d7f32b43ae47c",
+  "description": "null",
+  "imgUrl": "unnamed (8).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "pin": "3 cell 42 Wh",
+  "price": 65,
+  "product": "Laptop LG Gram 2021 16ZD90P",
+  "quantity": "5",
+  "ram": "16G",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "1.8 kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8b"
+  },
+  "bid": "60898f8258dc5603902a1159",
+  "cid": "6086750435d497341c09763c",
+  "description": "null",
+  "imgUrl": "unnamed (9).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "price": 11,
+  "product": "VGA GIGABYTE GeForce GTX 1050 2GB",
+  "quantity": "3",
+  "size": "10 x 30 x 40 cm",
+  "weight": "250g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8c"
+  },
+  "bid": "60898f8258dc5603902a1159",
+  "cid": "6086750435d497341c09763c",
+  "description": "null",
+  "imgUrl": "unnamed (10).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "price": 54,
+  "product": "VGA GIGABYTE GeForce RTX 3070",
+  "quantity": "5",
+  "size": "11 x 36 x 50 cm",
+  "weight": "100g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8d"
+  },
+  "bid": "60898ac0959d3d296cbf9d08",
+  "cid": "6086750435d497341c09763c",
+  "description": "null",
+  "imgUrl": "unnamed (11).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 6,
+  "product": "VGA MSI GeForce RTX 3060 VENTUS 3X ",
+  "quantity": "6",
+  "size": "12 x 20 x 20 cm",
+  "weight": "200g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8e"
+  },
+  "bid": "60898a4a959d3d296cbf9d06",
+  "cid": "6086750435d497341c09763c",
+  "description": "null",
+  "imgUrl": "unnamed (12).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 32,
+  "product": "VGA ASUS GeForce GTX 1650 4GB GDDR5",
+  "quantity": "3",
+  "size": "35.98 x 23.53 x 1.86 cm",
+  "weight": "200g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b8f"
+  },
+  "bid": "60aa75e695224e2a8864a068",
+  "cid": "608674b835d497341c097635",
+  "description": "null",
+  "imgUrl": "4727_pc_gaming_i7_10700__gtx_1650__ram_16gb__ssd_250gb.jpg",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 5,
+  "product": "PC1",
+  "quantity": "5",
+  "size": "50 x 28.53 x 10 cm",
+  "weight": "5kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b90"
+  },
+  "bid": "60aa75e695224e2a8864a068",
+  "cid": "608674b835d497341c097635",
+  "description": "null",
+  "imgUrl": "7ce7e1bc562e1c691bd3126edc635abf.jpg",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 13,
+  "product": "PC2",
+  "quantity": "9",
+  "size": "61 x 27 x 10 cm",
+  "weight": "6kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b91"
+  },
+  "bid": "60aa75e695224e2a8864a068",
+  "cid": "608674b835d497341c097635",
+  "description": "null",
+  "imgUrl": "PCSpecialist_Article_Asset.png",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 6,
+  "product": "PC3",
+  "quantity": "7",
+  "size": "52 x 50 x 20 cm",
+  "weight": "7kg"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b92"
+  },
+  "bid": "60898f8258dc5603902a1159",
+  "cid": "6086750435d497341c09763b",
+  "description": "null",
+  "imgUrl": "unnamed (13).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 5,
+  "product": "Mainboard GIGABYTE B460M GAMING HD",
+  "quantity": "5",
+  "size": "3.98 x 2.53 x 0.86 cm",
+  "weight": "300g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b93"
+  },
+  "bid": "60898a4a959d3d296cbf9d06",
+  "cid": "6086750435d497341c09763b",
+  "description": "null",
+  "imgUrl": "unnamed (14).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 4,
+  "product": "Mainboard ASUS ROG STRIX B550-E",
+  "quantity": "4",
+  "size": "4.9 x 5.53 x 0.86 cm",
+  "weight": "500g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b94"
+  },
+  "bid": "60898ac0959d3d296cbf9d08",
+  "cid": "6086750435d497341c09763b",
+  "description": "null",
+  "imgUrl": "unnamed (15).webp",
+  "isImg": "TRUE",
+  "led": "yes",
+  "made": "China",
+  "price": 21,
+  "product": "Mainboard MSI H310M GAMING ARCTIC",
+  "quantity": "3",
+  "size": "2.8 x 2.53 x 1.8 cm",
+  "weight": "350g"
+},{
+  "_id": {
+    "$oid": "60aa82d3b07bbb13ac994b95"
+  },
+  "bid": "60aa75e695224e2a8864a068",
+  "cid": "6086750435d497341c09763b",
+  "description": "null",
+  "imgUrl": "unnamed (16).webp",
+  "isImg": "TRUE",
+  "led": "no",
+  "made": "China",
+  "price": 3,
+  "product": "Mainboard ASROCK B460M Steel Legend",
+  "quantity": "3",
+  "size": "3 x 2.3 x 0.6 cm",
+  "weight": "400g"
+},{
+  "_id": {
+    "$oid": "60ae6d7d0c6a730db84dd3fc"
+  },
+  "product": "Laptop HP ProBook 430",
+  "cid": "60841028125d7f32b43ae47c",
+  "bid": "60898b41959d3d296cbf9d09",
+  "price": 5,
+  "quantity": "5",
+  "description": "null",
+  "isImg": "true",
+  "imgUrl": "unnamed (17).webp",
+  "size": "10 x 10 x 10 cm",
+  "weight": "200g",
+  "led": "no",
+  "made": "Japan"
+},{
+  "_id": {
+    "$oid": "60ae78143383b806f88fad71"
+  },
+  "product": "Laptop MSI Leopard GL75 10SDR",
+  "cid": "60841028125d7f32b43ae47c",
+  "bid": "60898ac0959d3d296cbf9d08",
+  "price": 5,
+  "quantity": "6",
+  "description": "null",
+  "isImg": "true",
+  "imgUrl": "unnamed (18).webp",
+  "size": "10 x 10 x 10 cm",
+  "weight": "500g",
+  "led": "yes",
+  "made": "Japan"
+},{
+  "_id": {
+    "$oid": "60af21f483233812e087e669"
+  },
+  "product": "Laptop ASUS ROG Strix SCAR II",
+  "cid": "60841028125d7f32b43ae47c",
+  "bid": "60898a4a959d3d296cbf9d06",
+  "price": 5,
+  "quantity": "6",
+  "description": "null",
+  "isImg": "true",
+  "imgUrl": "unnamed (19).webp",
+  "size": "10 x 10 x 10 cm",
+  "weight": "500g",
+  "led": "yes",
+  "made": "Japan",
+  "ram": "16G"
+},{
+  "_id": {
+    "$oid": "60c4777a71d0f72cc0d7bfdf"
+  },
+  "product": "Laptop Asus TUF FX705DD",
+  "cid": "60841028125d7f32b43ae47c",
+  "bid": "60898a4a959d3d296cbf9d06",
+  "price": 20,
+  "quantity": "100",
+  "description": "null",
+  "isImg": "true",
+  "imgUrl": "unnamed (20).jpg",
+  "size": "10 x 10 x 10 cm",
+  "weight": "500g",
+  "led": "yes",
+  "made": "Japan",
+  "ram": "16G"
+},{
+  "_id": {
+    "$oid": "60c4777a71d0f72cc0d7bfe0"
+  },
+  "product": "Mainboard Asus TUF X470-Plus",
+  "cid": "6086750435d497341c09763b",
+  "bid": "60898a4a959d3d296cbf9d06",
+  "price": 5,
+  "quantity": "1",
+  "description": "65465",
+  "isImg": "true",
+  "imgUrl": "unnamed (21).png",
+  "size": "10 x 10 x 10 cm",
+  "weight": "500g",
+  "led": "yes",
+  "made": "Japan",
+  "ram": "16G"
+}]

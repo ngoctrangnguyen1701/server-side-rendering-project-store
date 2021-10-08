@@ -1,0 +1,204 @@
+<style>
+    #deleteItem label, #editItem label{
+        display: block;
+        margin-top: 10px;
+    }
+    #deleteItem input, #deleteItem textarea, #editItem input, #editItem textarea{
+        width: 100%;
+    }
+</style>
+
+<h2 class="text-center bg-light">Product</h2>
+
+<div class="px-3">
+    <a href="/product/add" class="btn btn-info">Add product</a>
+    <button class="btn btn-warning deleteMany">Delete Many</button>
+
+
+    <form id="form">
+        <table class="table table-success table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="deleteMany-show" style="display: none;">
+                        <button class="btn btn-warning"><i class="far fa-trash-alt"></i></button>
+                    </th>
+                    <th>No.</th>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each arrProducts}}
+                    <tr>
+                        <td class="deleteMany-show" style="display: none;">
+                            <input type="checkbox" value="{{this._id}}" name="_id">
+                        </td>
+                        <td class="no"></td>
+                        <td>{{this.product}}</td>
+                        <td class="category">{{this.cid}}</td>
+                        <td class="brand">{{this.bid}}</td>
+                        <td>{{this.price}}</td>
+                        <td>{{this.quantity}}</td>
+                        <td>{{multiply this.price this.quantity}}</td>
+                        <td>{{this.description}}</td>
+                        <td>
+                            {{#if this.imgUrl}}
+                                <img src="/images/{{this.imgUrl}}" class="w-50">
+                            {{/if}}
+                        </td>
+                        <td><i class="far fa-edit editOne" value="{{this._id}}"></i></td>
+                        <td><i class="far fa-trash-alt deleteOne" value="{{this._id}}"></i></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+
+<!-- Modal DELETE-->
+<div class="modal fade" id="deleteItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <form class="modal-dialog" id="formDeleteOne" method="post" action="/product/delete">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Delete</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="hidden" name="_id">
+            <div>
+                <label>Product</label>
+                <input name="product" readonly>
+            </div>
+            <div>
+                <label>Category</label>
+                <input name="category-name" readonly>
+            </div>
+            <div>
+                <label>Brand</label>
+                <input name="brand-name" readonly>
+            </div>
+            <div>
+                <label>Price</label>
+                <input name="price" readonly>
+            </div>
+            <div>
+                <label>Quantity</label>
+                <input name="quantity" readonly>
+            </div>
+            <div>
+                <label>Description</label>
+                <textarea name="description" readonly></textarea>
+            </div>
+            <div>
+                <label>Image</label>
+                <img class="w-50">
+                <p>No image</p>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Delete</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- Modal EDIT-->
+<div class="modal fade" id="editItem" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <form class="modal-dialog" id="formEditOne" method="post" action="/product/edit" enctype="multipart/form-data">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="hidden" name="_id">
+            <div>
+                <label>Product</label>
+                <input name="product">
+            </div>
+            <div>
+                <label>Category</label>
+                <select name="cid">
+                    {{#each arrCategories}}
+                        <option value="{{this._id}}">{{this.category}}</option>
+                    {{/each}} 
+                </select>
+            </div>
+            <div>
+                <label>Brand</label>
+                <select name="bid">
+                    {{#each arrBrands}}
+                        <option value="{{this._id}}">{{this.brand}}</option>
+                    {{/each}} 
+                </select>
+            </div>
+            <div>
+                <label>Price</label>
+                <input name="price" type="number">
+            </div>
+            <div>
+                <label>Quantity</label>
+                <input name="quantity" type="number">
+            </div>
+            <div>
+                <label>Description</label>
+                <textarea name="description"></textarea>
+            </div>
+            <div>
+                <label>Image</label>
+                <img class="w-50">
+                <p>No image</p>
+                <input type="hidden" name="isImg">
+                <span>Change image</span>
+                <input type="file" name="img">
+                
+                <button type="button" class="btn btn-light mt-4 btn-delete-img">Delete image</button>
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<script src="/js/product/product_home.js"></script>
+<script>       
+    for(var i = 0; i < $('.category').length; i++){
+        var id_category = $('.category')[i].innerText;
+        //console.log(id_category);
+        {{#each arrCategories}}
+            var x = '{{this._id}}';
+            var y = '{{this.category}}';
+
+            if(id_category == x){
+                $('.category')[i].innerText = y;
+            }
+        {{/each}}
+    }
+    console.log('Category: id -> name, DONE')    
+
+    for(var i = 0; i < $('.brand').length; i++){
+        var id_brand = $('.brand')[i].innerText;
+        {{#each arrBrands}}
+            var x = '{{this._id}}';
+            var y = '{{this.brand}}';
+            if(x == id_brand){
+                $('.brand')[i].innerText = y;
+            }
+        {{/each}}
+    }
+    console.log('Brand: id -> name, DONE')    
+</script>

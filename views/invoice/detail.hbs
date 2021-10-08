@@ -1,0 +1,113 @@
+<h2 class="text-center mt-3">{{title}}</h2>
+
+<div class="card mx-4 mt-4 p-4 border">
+    <div class="row align-items-center">
+        <div class="col-3">Full name</div>
+        <div class="col-9">{{information.fullname}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Email</div>
+        <div class="col-9">{{information.email}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Phone</div>
+        <div class="col-9">{{information.phone}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Province</div>
+        <div class="col-9">{{information.province}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">District</div>
+        <div class="col-9">{{information.district}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Ward</div>
+        <div class="col-9">{{information.ward}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Address</div>
+        <div class="col-9">{{information.address}}</div>
+    </div>
+    <div class="row align-items-center mt-3">
+        <div class="col-3">Note</div>
+        <div class="col-9">{{information.note}}</div>
+    </div>
+</div>
+
+
+{{!-- Cart --}}
+<div class="your-cart">
+    <h2 class="mt-4 ms-4">Your cart</h2>
+    <div class="card mt-3 mx-4">
+        <div class="table-responsive mb-0">
+            <table class="table table-vcenter table-mobile-md card-table table-dark">
+                <thead style="background-color:antiquewhite">
+                    <tr>                    
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Amount</th>                    
+                    </tr> 
+                </thead>
+                <tbody>
+                    {{#each details}}
+                        <tr>
+                            <td>                            
+                                <div class="d-flex py-1 align-items-center">
+                                    <img src="/images/{{this.imgUrl}}" class="avatar me-2" >
+                                    <p class="mb-0 name" style="margin-left: 10px">{{this.product}}</p>                                    
+                                </div>                            
+                            </td>
+                            <td><input type="number" value="{{this.quantity}}" step="1" min="1" max="20" class="quantity" readonly></td>
+                            <td class="price">{{this.price}}</td>
+                            <td class="amount">{{multiply this.price this.quantity}}</td>                        
+                        </tr>
+                    {{/each}}   
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="me-4">
+        <div class="card mt-3 col-4 ms-auto">
+            <div class="card-body">
+                <p>You will buy: <span id="buy-product" class="text-warning">{{information.buy}}</span> product</p>
+                <div class="border-top"></div>                  
+                <h3 class="mt-3 font-weight-bold text-success">TOTAL: <span id="total">{{information.pay}}</span></h3>                    
+            </div>
+        </div>
+    </div>
+    <center>
+        <a href="/" class="btn btn-warning mt-3 me-3">Return home</a>
+        <a class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#modal-danger">Delete invoice</a>
+    </center>
+</div>
+
+
+{{!-- Modal delete --}}
+<div class="modal modal-blur fade" id="modal-danger" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
+        <div class="modal-content bg-white text-dark border-0">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-status bg-danger"></div>
+            <div class="modal-body text-center py-4">
+                <!-- Download SVG icon from http://tabler-icons.io/i/alert-triangle -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon mb-2 text-danger icon-lg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v2m0 4v.01" /><path d="M5 19h14a2 2 0 0 0 1.84 -2.75l-7.1 -12.25a2 2 0 0 0 -3.5 0l-7.1 12.25a2 2 0 0 0 1.75 2.75" /></svg>
+                <h3>Are you sure?</h3>
+                <div class="text-muted">Do you really want to remove this invoice? What you've done cannot be undone.</div>
+            </div>
+            <div class="modal-footer">
+                <div class="w-100">
+                    <div class="row">
+                        <div class="col">
+                            <a href="#" class="btn btn-white w-100" data-bs-dismiss="modal">Cancel</a>
+                        </div>
+                        <div class="col">
+                            <a href="/invoice/delete/{{information._id}}" class="btn btn-danger w-100">Delete invoice</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

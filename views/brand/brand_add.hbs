@@ -1,0 +1,69 @@
+{{!--ADD ONE  --}}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <h5>Add one brand</h5>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <form class="modal-dialog" method="post" id="addOne">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add brand</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+            <input type="text" name="brand" placeholder="brand">
+            <span class="ml-2 text-danger message"></span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">Accept</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+{{!--ADD MANY  --}}
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">
+    <h5>Add many of brands</h5>
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Add many of brands</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="modal-body" id="formAdd">
+          <div class="row">
+              <div class="col-6">
+                  <input type="text" name="brand" placeholder="brand" class="w-100">
+                  <span class="ml-2 text-danger message"></span>
+              </div>
+              <div class="col-3">
+                  <button class="btn btn-secondary">ADD</button>
+              </div>
+          </div>
+      </form>
+      
+      <div class="modal-footer">
+        <form action="/brand/add" method="post" id="addMany">
+            <p>List brands</p>
+            <div class="addMany-items border"></div>
+            
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Accept</button>
+            </div>
+        </form>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/brand/brand_add.js"></script> 

@@ -1,0 +1,26 @@
+{{!--source:  https://developers-dot-devsite-v2-prod.appspot.com/chart/interactive/docs/gallery/piechart.html --}}
+<div id="donutchart" style="width: 900px; height: 500px;"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    
+    function drawChart() {
+        var a = [['Task', 'Hours per Day']];
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        var options = {
+            title: 'Products in category',
+            pieHole: 0.4,
+        };
+
+        $.post('/chart/donut', data =>{
+            //console.log(data);
+            for(var i of data){                
+                a.push([i.category, i.total])
+            }
+            var data = google.visualization.arrayToDataTable(a);
+            chart.draw(data, options);
+        });
+    }
+</script>

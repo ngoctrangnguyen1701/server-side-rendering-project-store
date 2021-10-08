@@ -1,0 +1,63 @@
+<div class="container">
+    <button class="btn btn-primary mt-3" id="addLine">Add a line</button>
+    <button class="btn btn-secondary mt-3" id="addManyLine">Add many line</button>
+
+    <form id="formAdd" action="/product/add" method="post" enctype="multipart/form-data">
+        <table class="table table-success table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Brand</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                </tr>
+            </thead>
+            <tbody id="sheet">
+                <tr class="rowMessage">
+                    <td colspan="100">
+                        <p class="message mb-0" style="display: none; color:red">Please, test information! (product or price or quantity is empty)</p>
+                    </td>
+                </tr>
+                <tr class="rowInput">
+                    <td>
+                        <input type="text" name="product">
+                    </td>
+                    <td>
+                        <select name="cid">
+                            {{#each arrCategories}}
+                                <option value="{{this._id}}">{{this.category}}</option>
+                            {{/each}} 
+                        </select>
+                    </td>
+                    <td>
+                        <select name="bid">
+                            {{#each arrBrands}}
+                                <option value="{{this._id}}">{{this.brand}}</option>
+                            {{/each}} 
+                        </select>
+                    </td>
+                    <td>
+                        <input type="number" name="price">
+                    </td>
+                    <td>
+                        <input type="number" name="quantity">
+                    </td>
+                    <td>
+                        <textarea name="description" placeholder="null"></textarea>
+                    </td>
+                    <td>
+                        <input type="hidden" name="isImg">
+                        <input type="file" name="img">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      <button class="btn btn-danger">Accept</button>  
+      <button class="btn btn-secondary" id="btn-delete-rows-errors" type="button">Delete rows with errors</button>  
+    </form>
+</div>
+
+<script src="/js/product/product_add.js"></script>

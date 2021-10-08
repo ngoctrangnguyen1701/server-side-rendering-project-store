@@ -1,0 +1,52 @@
+<h2 class="text-center mt-3">{{title}}</h2>
+<form class="mt-4" name="form">
+    <label>Input exactly phone number</label>
+    <input type="number" name="phone">
+    <button class="btn btn-primary">Confirm</button>
+</form>
+
+<div class="card mt-4 border" id="result" style="display: none">
+    <table class="table table-bordered">
+        <thead style="background-color: antiquewhite; color: #000">
+            <tr>
+                <th>Full name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Province</th>
+                <th>District</th>
+                <th>Ward</th>
+                <th>Address</th>
+                <th>Detail</th>
+            </tr>
+        </thead>
+        <tbody id="sheet"></tbody>
+    </table>
+</div>
+
+
+<script>
+    $(form).submit((e) =>{
+        e.preventDefault();
+        var p = $(form['phone']).val();
+        $.post('/invoice/search', {phone: p}, data =>{
+            console.log(data);
+            $(sheet).html('');
+            $(result).css({display: "block"});
+
+            for(var i of data){
+                var html = `<tr>
+                                <td>${i.fullname}</td>
+                                <td>${i.email}</td>
+                                <td>${i.phone}</td>
+                                <td>${i.province}</td>
+                                <td>${i.district}</td>
+                                <td>${i.ward}</td>
+                                <td>${i.address}</td>
+                                <td><a href="/invoice/search/detail/${i._id}">Detail</a></td>
+                            </tr>
+                            `
+                $(sheet).append(html);
+            }
+        })
+    })
+</script>

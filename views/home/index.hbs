@@ -1,0 +1,75 @@
+<h1 class="text-center mt-3">{{title}}</h1>
+
+<div class="nav-item dropdown d-flex justify-content-end">
+    <a class="nav-link lh-1 text-reset p-0" data-bs-toggle="dropdown" aria-label="Open user menu">
+        <span>Sort</span> 
+        {{#if sort}}
+            <input type="buton" value="{{sort}}" class="ms-2" readonly>            
+        {{else}}
+            <input type="buton" value="Default" class="ms-2" readonly>            
+        {{/if}}
+    </a>
+    <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+        {{!-- link liên kết để sort trong search phải đi kèm với biến search,
+        do đó thứ tự trong link sẽ khác với những thằng liên kết sort khác --}}
+        {{#if search}}
+            <a href="/sort/search/1{{sortBySearch}}" class="dropdown-item">Price ascending &#10138;</a>
+            <a href="/sort/search/-1{{sortBySearch}}" class="dropdown-item">Price descending &#10136;</a>
+        {{else}}
+            <a href="/sort/{{sortById}}1" class="dropdown-item">Price ascending &#10138;</a>
+            <a href="/sort/{{sortById}}-1" class="dropdown-item">Price descending &#10136;</a>
+        {{/if}}
+    </div>
+    {{#if default}}
+        <a class="ms-2" href="{{default}}">&#10539;</a>
+    {{/if}}    
+</div>
+
+<div class="col-9 mx-auto">
+    <div class="row">
+        {{#if arrProducts}}
+            {{#each arrProducts}}
+                <div class="col-4">
+                    <a href="/detail/{{this._id}}" class="text-white">
+                        <div class="card mt-4">
+                            <div class="card-img">
+                                <img src="/images/{{this.imgUrl}}" class="w-100">
+                            </div>
+                            <div class="card-body">
+                            <h3 class="card-title">{{this.product}}</h3>
+                            <p>PRICE: {{this.price}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        {{else}}
+            <p>No result</p>
+        {{/if}}
+    </div>
+</div>
+<div class="d-flex mt-3">
+    <ul class="pagination mx-auto"></ul>
+</div>
+
+
+
+<script>        
+    for(var i = 1; i <= {{page_number}}; i++){
+        {{#if search}}
+            //link page trong search phải đi kèm với biến search,
+            //do đó thứ tự trong link liên kết sẽ khác với những thằng page khác
+            var html = `<li class="page-item">
+                            <a href="/{{link}}/${i}?search={{search}}" class="page-link">${i}</a>
+                        </li>`;
+            //?search  --> do name của thẻ <input> trong form search là 'search'
+        {{else}}
+            var html = `<li class="page-item">
+                            <a href="{{link}}/${i}" class="page-link">${i}</a>
+                        </li>`;
+        {{/if}}
+        $('.pagination').append(html);
+    }
+    $('.page-link').css({color: 'white'});
+</script>
+

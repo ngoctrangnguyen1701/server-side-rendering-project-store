@@ -1,0 +1,33 @@
+
+.sendtocart {   
+    display:block;    
+    animation: xAxis 1s forwards cubic-bezier(1.000,0.440,0.840,0.165);
+    
+}
+.shake{
+    animation: shakeCart 0.5s ease-in-out forwards;
+}
+/* @keyframes xAxis {    
+    30%{transform: translateY(-25vh) translateX(0) scale(0.2);}
+    100% {transform: translateY(-25vh) translateX(60vw) scale(0);}
+} */
+  
+@keyframes xAxis {    
+    30%{transform: translateY(-120%) translateX(0) scale(0.2);}
+    100% {transform: translateY(-120%) translateX(290%) scale(0);}
+}
+  
+@keyframes shakeCart {
+  25% {
+    transform: translateX(6px)
+  }
+  50% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

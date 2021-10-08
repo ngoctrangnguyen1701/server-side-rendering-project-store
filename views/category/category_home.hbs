@@ -1,0 +1,39 @@
+<h2 class="text-center bg-light">Category</h2>
+
+<div class="container">
+    <a href="/category/add" class="btn btn-info">Add Category</a>
+    <button class="btn btn-warning deleteMany">Delete Many</button>
+
+    <form id="form">
+        <table class="table table-info table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="deleteMany-show" style="display: none;">
+                        <button class="btn btn-warning"><i class="far fa-trash-alt"></i></button>
+                    </th>
+                    <th>No.</th>
+                    <th>Category</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each arrCategories}}
+                    <tr>
+                        {{!-- <td class="d-none">{{this._id}}</td> --}}
+                        <td class="deleteMany-show" style="display: none;">
+                            <input type="checkbox" value="{{this._id}}" name="_id">
+                        </td>
+                        <td class="no"></td>
+                        <input type="hidden" value="{{this.category}}" class="categoryName">
+                        <td>{{this.category}}</td>
+                        <td><i class="far fa-edit" value="{{this._id}}"></i></td>
+                        <td><i class="far fa-trash-alt deleteOne" value="{{this._id}}"></i></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+<script src="/js/category/category_home.js"></script>

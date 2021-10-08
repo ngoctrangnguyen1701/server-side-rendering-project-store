@@ -1,0 +1,18 @@
+*{box-sizing: border-box;}
+table, tr, th, td{
+    border: 1px solid #ddd;
+}
+.text-center{
+    text-align: center;
+}
+
+.table { display: table; } 
+.table>* { display: table-row; }
+.table>*>* { display: table-cell; }
+
+.title input{
+    text-align: center;
+}
+.title input:focus{
+    outline:none;
+}

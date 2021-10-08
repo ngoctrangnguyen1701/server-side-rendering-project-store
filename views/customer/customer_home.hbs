@@ -1,0 +1,78 @@
+<div class="container">
+    <a href="/customer/loadmore">Load more</a>
+    <a href="/customer/autoload">Auto load</a>
+    <a href="/customer/datatables">DataTables</a>
+    <nav aria-label="Page navigation example">
+        <ul class="pagination mt-3">
+            <li class="page-item" id="page_previous">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+
+            <li class="page-item" id="page_next">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <table class="table table-warning table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastnamme</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip code</th>
+            </tr>
+        </thead>
+        <tbody id="sheet">
+            {{#each arrCustomers}}
+                <tr>
+                    <td style="display: none;">{{this._id}}</td>
+                    <td>{{this.id}}</td>
+                    <td>{{this.fn}}</td>
+                    <td>{{this.ln}}</td>
+                    <td>{{this.eml}}</td>
+                    <td>{{this.tel}}</td>
+                    <td>{{this.strt}}</td>
+                    <td>{{this.cty}}</td>
+                    <td>{{this.stat}}</td>
+                    <td>{{this.zipc}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<script>
+    var page = {{page}},
+        page_number = {{page_number}};
+
+    for(var i = 1; i <= page_number; i++){
+        $(page_next).before(
+            `<li class="page-item number">
+                        <a class="page-link" href="/customer/page${i}">${i}</a>
+            </li>`
+        );
+    }
+    $($('.number')[page - 1]).addClass('active');
+    
+    //↓ gán link cho 2 icon mũi tên đầu cuối
+    $('#page_next > .page-link').attr('href', `/customer/page${page + 1}`); 
+    $('#page_previous > .page-link').attr('href', `/customer/page${page - 1}`);
+
+    //↓ ẩn 2 icon mũi tên đầu cuối để không bấm lố
+    if(page == page_number){
+        $(page_next).hide();
+    }
+    else if(page == 1){
+        $(page_previous).hide();
+    }; 
+</script>

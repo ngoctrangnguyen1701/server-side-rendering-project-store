@@ -1,0 +1,46 @@
+<h2 class="text-center bg-light">Brand</h2>
+
+<div class="container">
+    <a href="/brand/add" class="btn btn-info">Add brand</a>
+    <button class="btn btn-warning deleteMany">Delete Many</button>
+
+
+    <form id="form">
+        <table class="table table-danger table-bordered mt-3">
+            <thead class="table-dark">
+                <tr>
+                    <th class="deleteMany-show" style="display: none;">
+                        <button class="btn btn-warning"><i class="far fa-trash-alt"></i></button>
+                    </th>
+                    <th>No.</th>
+                    <th>Brand</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each arrBrands}}
+                    <tr>
+                        {{!-- <td class="d-none">{{this._id}}</td> --}}
+                        <td class="deleteMany-show" style="display: none;">
+                            <input type="checkbox" value="{{this._id}}" name="_id">
+                        </td>
+                        <td class="no"></td>
+                        <input type="hidden" value="{{this.brand}}" class="brandName">
+                        <td>{{this.brand}}</td>
+                        <td><i class="far fa-edit" value="{{this._id}}"></i></td>
+                        <td><i class="far fa-trash-alt deleteOne" value="{{this._id}}"></i></td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </form>
+</div>
+
+{{!-- <script src="/js/brand/brand_home.js"></script>
+<script src="/js/brand/brand_add.js"></script> --}} {{!-- tới cái trang localhost:5000/add thì mới load file 'brand_add.js' --}}
+<script src="/js/brand/brand_home.js"></script>
+
+{{!-- bỏ dấu / đứng đầu, để khi tới url localhost:5000/brand nó tự đính lên phía sau,
+      còn nếu để dấu / phía trước  nó sẽ gắn link phía sau loscalhost:5000/
+--}}

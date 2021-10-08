@@ -1,0 +1,174 @@
+<link rel="stylesheet" type="text/css" href="/css/slick/slick.css">
+<link rel="stylesheet" type="text/css" href="/css/slick/slick-theme.css">
+<style>
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: white;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: 1;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+</style>
+<div class="row">
+    <div class="col-9 mx-auto">
+        <div class="card mt-4">
+            <div class="row p-3">
+                <div class="col-4">
+                    <div class="position-relative">
+                        <div class="card-img position-absolute">
+                            <img src="/images/{{product.imgUrl}}" class="w-100">
+                        </div>
+                        <div class="card-img" id="cart-img">
+                            <img src="/images/{{product.imgUrl}}" class="w-100">
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">{{product.product}}</h3>
+                        <p>PRICE: {{product.price}}</p>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Brand</th>
+                            <td>{{brand_name}}</td>
+                        </tr>
+                        <tr>
+                            <th>Size</th>
+                            <td>{{product.size}}</td>
+                        </tr>
+                        <tr>
+                            <th>Weight</th>
+                            <td>{{product.weight}}</td>
+                        </tr>
+                        {{#if product.ram}}
+                            <tr>
+                                <th>Ram</th>
+                                <td>{{product.ram}}</td>
+                            </tr>
+                        {{/if}}
+                        {{#if product.pin}}
+                            <tr>
+                                <th>Pin</th>
+                                <td>{{product.pin}}</td>
+                            </tr>
+                        {{/if}}
+                        <tr>
+                            <th>Led</th>
+                            <td>{{product.led}}</td>
+                        </tr>
+                        <tr>
+                            <th>Made in</th>
+                            <td>{{product.made}}</td>
+                        </tr>
+                        {{#if product.description}}
+                            <tr>
+                                <th>Description</th>
+                                <td>{{product.description}}</td>
+                            </tr>
+                        {{/if}}
+                    </table>
+                </div>                    
+                <form name="formCartAdd">
+                    <input type="hidden" name="pid" value="{{product._id}}">
+                    <input type="hidden" name="product" value="{{product.product}}">
+                    <input type="hidden" name="price" value="{{product.price}}">
+                    <input type="hidden" name="imgUrl" value="{{product.imgUrl}}">
+                    <label>Quantity: </label>
+                    <input type="number" name="quantity" value="1" class="form-control form-control-rounded w-25 d-inline quantity" step="1" min="1" max="20">
+                    <button class="btn btn-primary ml-3" id="addtocart">Add to cart</button>                                                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- Carousel --}}
+{{#if relatedProducts}}
+    <div class="mt-4">
+        <h3 class="border-bottom">Related products</h3>
+        <section class="regular autoplay col-9 mx-auto">        
+            {{#each relatedProducts}}
+                <div>
+                    <a href="/detail/{{this._id}}" class="text-white">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/images/{{this.imgUrl}}" class="w-100">
+                            </div>
+                            <div class="card-body">
+                            <h3 class="card-title">{{this.product}}</h3>
+                            <p>PRICE: {{this.price}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </section>
+    </div>
+{{/if}}
+
+{{#if sameBrand}}
+    <div class="mt-5">
+        <h3 class="border-bottom">Same brand</h3>
+        <section class="regular autoplay col-9 mx-auto">
+            {{#each sameBrand}}
+                <div>
+                    <a href="/detail/{{this._id}}" class="text-white">
+                        <div class="card">
+                            <div class="card-img">
+                                <img src="/images/{{this.imgUrl}}" class="w-100">
+                            </div>
+                            <div class="card-body">
+                            <h3 class="card-title">{{this.product}}</h3>
+                            <p>PRICE: {{this.price}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </section>
+    </div>
+{{/if}}
+
+
+<script src="/js/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+    });
+</script>
+
+<script>
+    $('.autoplay').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        });
+</script>
+
+<script src="/js/detail.js"></script>

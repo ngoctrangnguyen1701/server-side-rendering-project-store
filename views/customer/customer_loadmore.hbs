@@ -1,0 +1,42 @@
+<div class="container">
+    <a href="/customer/loadmore">Load more</a>
+
+    <table class="table table-warning table-bordered mt-3">
+        <thead class="table-dark">
+            <tr>
+                <th>Id</th>
+                <th>Firstname</th>
+                <th>Lastnamme</th>
+                <th>Email</th>
+                <th>Tel</th>
+                <th>Street</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip code</th>
+            </tr>
+        </thead>
+        <tbody id="sheet">
+            {{#each arrCustomers}}
+                <tr>
+                    <td style="display: none;">{{this._id}}</td>
+                    <td>{{this.id}}</td>
+                    <td>{{this.fn}}</td>
+                    <td>{{this.ln}}</td>
+                    <td>{{this.eml}}</td>
+                    <td>{{this.tel}}</td>
+                    <td>{{this.strt}}</td>
+                    <td>{{this.cty}}</td>
+                    <td>{{this.stat}}</td>
+                    <td>{{this.zipc}}</td>
+                </tr>
+            {{/each}}
+        </tbody>
+    </table>
+    <center>
+        <button class="btn btn-success" id="btn-load-more">Load more</button>
+    </center>
+</div>
+
+<script src="/js/customer/customer_loadmore.js"></script>
+
+
